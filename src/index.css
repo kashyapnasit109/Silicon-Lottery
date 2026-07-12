@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Outfit:wght@300;400;600&display=swap');
+
+@layer base {
+  body {
+    @apply bg-background text-gray-100 font-sans antialiased overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight text-white;
+  }
+}
+
+@layer components {
+
+  /* Premium Glassmorphism Cards */
+  .glass-panel {
+    @apply bg-glass border border-glass-border backdrop-blur-xl rounded-xl transition-all duration-300;
+  }
+
+  .glass-panel:hover {
+    @apply border-glass-hover shadow-[0_8px_32px_rgba(0,212,255,0.08)] -translate-y-1;
+  }
+
+  /* Mono UI Labels */
+  .ui-label {
+    @apply font-mono text-[0.7rem] uppercase tracking-[0.2em] text-muted;
+  }
+
+  /* Cyan Pill Tags */
+  .pill-tag {
+    @apply flex items-center gap-2 px-4 py-1.5 rounded-full border border-glass-border bg-cyan-900/40 font-display text-sm whitespace-nowrap;
+  }
+
+  .pill-dot {
+    @apply w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00d4ff];
+  }
+}
+
+/* Custom Scrollbar for Immersion */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.background');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.glass.border');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.cyan.400');
+}
